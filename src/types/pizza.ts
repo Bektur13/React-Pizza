@@ -1,8 +1,8 @@
 export interface Pizza {
-    id: string,
+    id: number,
     name: string, 
     imageUrl: string,
-    price: number,
+    price: any,
     sizes: number[],
     types: number[],
     category?: number,
@@ -16,8 +16,10 @@ export interface SortOption {
 
 export interface PizzaState {
     items: Pizza[],
-    selectedSize: number | null,
-    selectedType: number | null,
-    status: 'idle' | 'loading' | 'succeeded' | 'failed';
-    error: string | null
+    pizzaItems: object
+}
+
+export interface PizzaBlockProps {
+    pizza: Pizza,
+    countPizza: number,
 }
