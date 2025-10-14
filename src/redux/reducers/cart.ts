@@ -165,5 +165,67 @@ const cartSlice = createSlice({
             state.totalCount = getTotalSum(newItems, 'items.length');
             state.totalPrice = getTotalSum(newItems, 'totalPrice');
         },
-    }
-})
+
+        clearCart(state) {
+            state.items = {},
+            state.totalCount = 0;
+            state.totalPrice = 0
+        },
+
+        plusCartItem(state, action: PayloadAction<string>) {
+            const id = action.payload;
+            const newItems = [
+                ...state.items[id].items,
+                state.items[id].items[0],
+            ]
+
+            const updatedItems = {
+                ...state.items,
+                [id]: {
+                    items: newItems,
+                    totalPrice: getTotalPrice(newItems),
+                }
+            };
+
+            state.items = updatedItems;
+            state.totalCount = getTotalSum(updatedItems, 'ites.length');
+            state.totalPrice = getTotalSum(updatedItems, 'totalPrice');
+        },
+        minusCartItem(state, action: PayloadAction<string>) {
+            const id = action.payload;
+            const oldItems = state.items[id].items;
+            const newObjItems = oldItems.length > 1 ? oldItems.slice(1) : oldItems;
+
+            const newItems = {
+                ...state.items,
+                [id]: { items: newObjItems, totalPrice: getTotalPrice(newObjItems) },
+            }
+
+            state.items = newItems;
+            state.totalCount = getTotalSum(newItems, 'items.length');
+            state.totalPrice = getTotalSum(newItems, 'totalPrice');
+        },
+        removeCartItem(state, action: PayloadAction<string>) {
+            const id = action.payload;
+            const newItems = {...state.items};
+            const currentPrice = newItems[id].totalPrice;
+            const currentCount = newItems[id].items.length;
+
+            delete newItems[id];
+
+            state.items = newItems;
+            state.totalPrice -= currentPrice;
+            state.totalCount -= currentCount;
+        },
+    },
+});
+
+export const {
+    addCartItem,
+    clearCart,
+    plusCartItem,
+    minusCartItem,
+    removeCartItem,
+} = cartSlice.actions;
+
+export default cartSlice.reducer;
