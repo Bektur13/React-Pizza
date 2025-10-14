@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 const FormikExample = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => alert(JSON.stringify(data));
+    const onSubmit = (data: any) => alert(JSON.stringify(data));
 
     return (
         <div onSubmit={handleSubmit(onSubmit)}>

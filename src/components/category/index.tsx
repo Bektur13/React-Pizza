@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { redux } from '../../redux/actions/filter';
+import { category } from '../../redux/actions/filter';
 
 const Categories = () => {
     const dispatch = useDispatch();
     const categoriesItems = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
     const [active, setActive] = useState(null);
 
-    const selectItemOnClick = (i) => {
+    const selectItemOnClick = (i: any) => {
         dispatch(category(i));
         setActive(i);
     }
 
-    const activeFromRedux = useSelector((state) => state.filters.category);
+    const activeFromRedux = useSelector((state: any) => state.filters.category);
 
     const selectAllCategory = () => {
         setActive(null);

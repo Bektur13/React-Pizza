@@ -2,8 +2,8 @@ import logo from '../../assets/pizza-logo.png';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const Header = () => {
-    const { totalCount, totalPrice } = useSelector((redux) => redux.cart);
+export const Header = () => {
+    const { totalCount, totalPrice } = useSelector((redux: any) => redux.cart);
     return (
     <header className='header'>
       <div className='container'>
