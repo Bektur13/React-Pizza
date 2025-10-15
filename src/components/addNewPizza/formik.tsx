@@ -1,5 +1,5 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
+import './style.scss';
 
 const FormikExample = () => {
     const { register, handleSubmit } = useForm();

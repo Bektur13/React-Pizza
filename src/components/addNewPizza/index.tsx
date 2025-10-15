@@ -13,23 +13,23 @@ const AddNewPizza = () => {
     });
 
     return (
-        <div className="add-pizza">
-            <h3 className="add-pizza__title">Adding new pizza</h3>
-            <h5 className="add-pizza__subtitle">Choose options</h5>
-            <form className="form">
-                <div className="from__row">
-                    <label className="form-item">
-                        <span className="form-item__legend">Name</span>
-                        <input type="text" className="form-item__input" />
+        <div className='add-pizza'>
+            <h3 className='add-pizza__title'>Добавление новой пиццы</h3>
+            <h5 className='add-pizza__subtitle'>Выберите параметры</h5>
+            <form className='form'>
+                <div className='form__row'>
+                    <label className='form-item' htmlFor=''>
+                        <span className='form-item__legend'>Название</span>
+                        <input className='form-item__input' type='text' />
                     </label>
-                    <label className="form-item">
-                        <span className="form-item__legend">Image URL</span>
-                        <input type="text" className="form-item__input" />
+                    <label className='form-item' htmlFor=''>
+                        <span className='form-item__legend'>Путь к картинке</span>
+                        <input className='form-item__input' type='text' />
                     </label>
                 </div>
-                <div className="form__row">
-                    <div className="form-item sizes">
-                        <h6 className="form-item__legend">Sizes</h6>
+                <div className='form__row'>
+                    <div className='form-item sizes'>
+                        <h6 className='form-item__legend'>Размеры</h6>
                         <FormikExample />
                     </div>
                     <div className='form-item types'>
@@ -44,23 +44,24 @@ const AddNewPizza = () => {
                         </label>
                     </div>
                 </div>
-                <div><div className='prices'>
-                    <label htmlFor=''>
-                        <span>26 см</span>
-                        <input type='text' placeholder='345' />
-                        <span>сом</span>
-                    </label>
-                    <label htmlFor=''>
-                        <span>30 см</span>
-                        <input type='text' placeholder='455' />
-                        <span>сом</span>
-                    </label>
-                    <label htmlFor=''>
-                        <span>40 см</span>
-                        <input type='text' placeholder='620' />
-                        <span>сом</span>
-                    </label>
-                </div>
+                <div>
+                    <div className='prices'>
+                        <label htmlFor=''>
+                            <span>26 см</span>
+                            <input type='text' placeholder='345' />
+                            <span>сом</span>
+                        </label>
+                        <label htmlFor=''>
+                            <span>30 см</span>
+                            <input type='text' placeholder='455' />
+                            <span>сом</span>
+                        </label>
+                        <label htmlFor=''>
+                            <span>40 см</span>
+                            <input type='text' placeholder='620' />
+                            <span>сом</span>
+                        </label>
+                    </div>
                 </div>
                 <div className='add-pizza__bottom'>
                     <p className='add-pizza__info'>Не забудьте указать цену для разных резмеров пиццы*</p>
@@ -68,7 +69,7 @@ const AddNewPizza = () => {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default AddNewPizza;

@@ -1,14 +1,14 @@
-import logo from '../../assets/pizza-logo.png';
+import logo from '../../assets/pizza-logo.svg';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-export const Header = () => {
+const Header = () => {
     const { totalCount, totalPrice } = useSelector((redux: any) => redux.cart);
     return (
     <header className='header'>
       <div className='container'>
         <Link to='/' className='header__logo'>
-          <img width='38' src={logo} alt='Pizza logo' />
+          <img src={logo} alt='Pizza logo' />
           <div>
             <h1>React Pizza</h1>
             <p>Самая вкусная пицца во вселенной</p>
@@ -52,4 +52,6 @@ export const Header = () => {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

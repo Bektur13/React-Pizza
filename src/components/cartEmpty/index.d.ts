@@ -4,7 +4,7 @@ declare module '*.png' {
 }
 
 declare module '*.svg' {
-    import React from "react";
-    export const ReactComponent: string;
+    const value: string;
+    export default value;
 
 }

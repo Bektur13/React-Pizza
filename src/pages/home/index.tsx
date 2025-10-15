@@ -10,7 +10,7 @@ const Home = () => {
     const useAppDispatch: () => AppDispatch = useDispatch;
     const dispatch = useAppDispatch();
 
-    const { items, pizzaItems } = useSelector((state: any) => state.pizza);
+    const { items, pizzaItems } = useSelector((state: any) => state.pizzas);
     const { category, sort } = useSelector((state: any) => state.filters);
 
     useEffect(() => {
@@ -41,4 +41,6 @@ const Home = () => {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

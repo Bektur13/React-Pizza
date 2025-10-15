@@ -1,4 +1,4 @@
-import { ReactComponent as logo } from '../../assets/pizza-logo.svg';
+import logo from '../../assets/pizza-logo.svg';
 import Nav from './nav';
 import './style.scss';
 

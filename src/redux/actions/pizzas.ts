@@ -12,12 +12,12 @@ export const pizzaCount = (id: number) => ({
     payload: id,
 });
 
-export const dropCount = (id: number) => ({
+export const dropCount = (id: number | null) => ({
     type: DROP_COUNTER,
     payload: id,
 })
 
-export const removeCounter = (id: number) => ({
+export const removeCounter = (id: any) => ({
     type: REMOVE_COUNTER,
     payload: id,
 })

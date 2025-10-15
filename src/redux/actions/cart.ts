@@ -87,17 +87,17 @@ export const clearCartAction = () => ({
     type: CLEAR_CART,
 });
 
-export const plusCartAction = (id: number) => ({
+export const plusCartAction = (id: any) => ({
     type: PLUS_CART_ITEM,
     payload: id
 });
 
-export const minusCartAction = (id: number) => ({
+export const minusCartAction = (id: any) => ({
     type: MINUS_CART_ITEM,
     payload: id,
 });
 
-export const removeCartAction = (id: number) => ({
+export const removeCartAction = (id: any) => ({
     type: REMOVE_CART_ITEM,
     payload: id,
 })

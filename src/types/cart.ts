@@ -4,16 +4,18 @@ export interface PizzaItem {
     price: number,
     imageUrl?: string,
     type?: string,
-    size?: number
+    size?: any,
+    totalPrice: number,
+    totalCount: number
 }
 
-export interface CartItem {
+export interface CartItemProps {
     items: PizzaItem[],
     totalPrice: number,
 }
 
 export interface CartState {
-    items: Record<string, CartItem>,
+    items: Record<string, CartItemProps>,
     totalPrice: number,
     totalCount: number
 }
